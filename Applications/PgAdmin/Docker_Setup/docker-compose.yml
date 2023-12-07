@@ -1,0 +1,14 @@
+version: '3.6'
+
+services:
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    user: root
+    restart: always
+    container_name: pgadmin_local
+    env_file:
+      - pgadmin4_prod_env.env
+    ports:
+        - 54321:5050
+    volumes:
+        - /home/ubuntu/Data/pgadmin_local_data:/var/lib/pgadmin
